@@ -5,7 +5,7 @@ machine:
 
 dependencies:
   post:
-    - pip install -U -r dev-requirements.txt
+    - pip install -U -r requirements.txt
 
 test:
   override:
