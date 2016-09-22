@@ -19,33 +19,33 @@ class ObjectAmpStitchFix():
     def write_header_form_sign_up(self):
         header_lines = ['Test Name', 'Web/Mobile?', 'Resolution', 'Form A% ?', 'Form B% ?', 'Form C% ?',
                         'Form D% ?', 'Form E% ?', 'Form F% ?', 'No of Iterations of URL', 'Pass/Fail?']
-        with open("/home/stonex/Desktop/ampuinew/Test_Results/Amp_UI_Form_Sign_Up_RESULTS.csv", "w") as f:
+        with open("Amp_UI_Form_Sign_Up_RESULTS.csv", "w") as f:
             writer = csv.writer(f)
             writer.writerows([header_lines])
 
     def write_header_form_variant(self):
         header_lines = ['Test Name', 'Web/Mobile?', 'Resolution', 'Form A% ?', 'Form B% ?', 'Form C% ?',
                         'Form D% ?', 'Form E% ?', 'Form F% ?', 'No of Iterations of URL', 'Pass/Fail?']
-        with open("/home/stonex/Desktop/ampuinew/Test_Results/form_variant/Amp_UI_Form_variant_RESULTS.csv", "w") as f:
+        with open("Amp_UI_Form_variant_RESULTS.csv", "w") as f:
             writer = csv.writer(f)
             writer.writerows([header_lines])
 
     def write_location_info(self, write_me):
         time.sleep(1)
-        with open("/home/stonex/Desktop/ampuinew/Test_Results/form_variant/Amp_UI_Form_variant_RESULTS.csv", "a") as f:
+        with open("Amp_UI_Form_variant_RESULTS.csv", "a") as f:
             writer = csv.writer(f)
             writer.writerows([[unicode(s).encode("utf-8") for s in write_me]])
 
     def write_form_sign_up(self, write_me):
         time.sleep(1)
-        with open("/home/stonex/Desktop/ampuinew/Test_Results/Amp_UI_Form_Sign_Up_RESULTS.csv", "a") as f:
+        with open("Amp_UI_Form_Sign_Up_RESULTS.csv", "a") as f:
             writer = csv.writer(f)
             writer.writerows([[unicode(s).encode("utf-8") for s in write_me]])
 
     def write_header_for_sign_up(self):
         header_lines = ['Test Name', 'Web/Mobile?', 'Resolution', 'Form A Sign Up ?', 'Form B Sign Up?', 'Form C Sign Up ?',
                         'Form D Sign Up ?', 'Form E Sign Up ?', 'Form F Sign Up ?', 'Pass/Fail?']
-        with open("/home/stonex/Desktop/ampuinew/Test_Results/Amp_UI_Sign_Up_RESULTS.csv", "w") as f:
+        with open("Amp_UI_Sign_Up_RESULTS.csv", "w") as f:
             writer = csv.writer(f)
             writer.writerows([header_lines])
 
@@ -68,7 +68,7 @@ class ObjectAmpStitchFix():
                               form_d, form_e, form_f, each[2], 'Test Passed']
                     self.write_location_info(status)
                     try:
-                        driver.get_screenshot_as_file('/home/stonex/Desktop/ampuinew/Test_Results/form_variant/passed_screenshots/mobile/Device_NAME_%s.png'%device_name)
+                        driver.get_screenshot_as_file('Device_NAME_%s.png'%device_name)
                     except:
                         pass
                 except Exception as e:
@@ -76,7 +76,7 @@ class ObjectAmpStitchFix():
                               '_Failed_', '_Failed_', '_Failed_', '_Failed_', '_Failed_', 'Test Failed']
                     self.write_location_info(status)
                     try:
-                        driver.get_screenshot_as_file('/home/stonex/Desktop/ampuinew/Test_Results/form_variant/failed_screen_shots/mobile/Device_NAME_%s.png'%device_name)
+                        driver.get_screenshot_as_file('Device_NAME_%s.png'%device_name)
                     except:
                         pass
                     print 'Failure due to:', e
@@ -110,7 +110,7 @@ class ObjectAmpStitchFix():
                                   form_d, form_e, form_f, each[2], 'Test Passed']
                         self.write_location_info(status)
                         try:
-                            driver.get_screenshot_as_file('/home/stonex/Desktop/ampuinew/Test_Results/form_variant/passed_screenshots/web/web.png')
+                            driver.get_screenshot_as_file('web.png')
                         except:
                             pass
                     except Exception as e:
@@ -118,7 +118,7 @@ class ObjectAmpStitchFix():
                                   '_Failed_', '_Failed_', '_Failed_', '_Failed_', '_Failed_', 'Test Failed']
                         self.write_location_info(status)
                         try:
-                            driver.get_screenshot_as_file('/home/stonex/Desktop/ampuinew/Test_Results/form_variant/failed_screen_shots/web/web.png')
+                            driver.get_screenshot_as_file('web.png')
                         except:
                             pass
                         print 'Failure due to:', e
