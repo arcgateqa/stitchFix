@@ -9,4 +9,4 @@ dependencies:
 
 test:
   override:
-    - py.test test_ampush_stitchfix.py
+    - test_ampush_stitchfix.py
