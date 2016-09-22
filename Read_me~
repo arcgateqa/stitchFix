@@ -1,0 +1,19 @@
+__Authour__ "Karunakar Sapogu"
+
+A) 
+Required Packages
+1: python 2.6+
+2: selenium 2.53
+3: chrome driver preferred 2.11
+4: pip install tqdm
+5: Chrome browser version 48
+
+B)Proxy
+
+Enable PROXY = US proxy in Setup -> ampush_stitchfix_test.py file, If this program is executed outside US, Else comment out PROXY and chrome_option for proxy in setup -> ampush_stitchfix_test.py 
+
+C) To run Form variant test
+
+1: In url.csv file pass the required url along with number of iterations to calculate
+2: Obtain results in Amp_UI_Form_variant_RESULTS.csv
+

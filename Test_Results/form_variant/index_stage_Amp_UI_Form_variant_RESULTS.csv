@@ -1,0 +1,3 @@
+Test Name,Web/Mobile?,Resolution,Form A% ?,Form B% ?,Form C% ?,Form D% ?,Form E% ?,Form F% ?,No of Iterations of URL,Pass/Fail?
+Form variant,Web,"(1024, 768)",0.0,0.0,0.0,0.0,51.5,48.5,200,Test Passed
+Form variant,Mobile,Browser Iphone4,0.0,23.0,0.0,0.0,0.0,76.5,200,Test Passed
