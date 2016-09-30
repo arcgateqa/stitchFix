@@ -13,7 +13,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 from po_ampush_stichfix import ObjectAmpStitchFix
 import csv
 import time
-from tqdm import tqdm
+#from tqdm import tqdm
 class AAUIAmpushStitchFix(unittest.TestCase):
 
     def setUp(self):
@@ -34,7 +34,7 @@ class AAUIAmpushStitchFix(unittest.TestCase):
         driver = ObjectAmpStitchFix(self.driver)
         driver.function_form_variant_displayed()
 
-    def test_function_all_forms_sign_up(self):
+    def _function_all_forms_sign_up(self):
         driver = ObjectAmpStitchFix(self.driver)
         driver.function_form_sign_up()
 
@@ -64,7 +64,7 @@ class UIAmpushStitchFixMobileIphone4(unittest.TestCase):
         driver = ObjectAmpStitchFix(self.driver)
         driver.mobile_function_form_variant_displayed('iPhone 4')
 
-    def test_function_all_forms_sign_up(self):
+    def _function_all_forms_sign_up(self):
         driver = ObjectAmpStitchFix(self.driver)
         driver.function_form_sign_up()
 
@@ -90,12 +90,12 @@ class UIAmpushStitchFixMobileIphone5(unittest.TestCase):
         # self.driver = webdriver.Firefox(profile)
         self.verificationErrors = []
 
-    def test_function_form_variant_displayed(self):
+    def _function_form_variant_displayed(self):
         # self.driver.orientation = 'portrait'
         driver = ObjectAmpStitchFix(self.driver)
         driver.mobile_function_form_variant_displayed('iPhone 5')
 
-    def test_function_all_forms_sign_up(self):
+    def _function_all_forms_sign_up(self):
         driver = ObjectAmpStitchFix(self.driver)
         driver.function_form_sign_up()
 
@@ -121,12 +121,12 @@ class UIAmpushStitchFixMobileIphone6(unittest.TestCase):
         # self.driver = webdriver.Firefox(profile)
         self.verificationErrors = []
 
-    def test_function_form_variant_displayed(self):
+    def _function_form_variant_displayed(self):
         # self.driver.orientation = 'portrait'
         driver = ObjectAmpStitchFix(self.driver)
         driver.mobile_function_form_variant_displayed('iPhone 6')
 
-    def test_function_all_forms_sign_up(self):
+    def _function_all_forms_sign_up(self):
         driver = ObjectAmpStitchFix(self.driver)
         driver.function_form_sign_up()
 
@@ -152,12 +152,12 @@ class UIAmpushStitchFixMobileIphone6Plus(unittest.TestCase):
         # self.driver = webdriver.Firefox(profile)
         self.verificationErrors = []
 
-    def test_function_form_variant_displayed(self):
+    def _function_form_variant_displayed(self):
         # self.driver.orientation = 'portrait'
         driver = ObjectAmpStitchFix(self.driver)
         driver.mobile_function_form_variant_displayed('iPhone 6 plus')
 
-    def test_function_all_forms_sign_up(self):
+    def _function_all_forms_sign_up(self):
         driver = ObjectAmpStitchFix(self.driver)
         driver.function_form_sign_up()
 
@@ -183,12 +183,12 @@ class UIAmpushStitchFixMobileAppleIpad(unittest.TestCase):
         # self.driver = webdriver.Firefox(profile)
         self.verificationErrors = []
 
-    def test_function_form_variant_displayed(self):
+    def _function_form_variant_displayed(self):
         # self.driver.orientation = 'portrait'
         driver = ObjectAmpStitchFix(self.driver)
         driver.mobile_function_form_variant_displayed('iPad')
 
-    def test_function_all_forms_sign_up(self):
+    def _function_all_forms_sign_up(self):
         driver = ObjectAmpStitchFix(self.driver)
         driver.function_form_sign_up()
 
@@ -214,12 +214,12 @@ class UIAmpushStitchFixMobileIpadMini(unittest.TestCase):
         # self.driver = webdriver.Firefox(profile)
         self.verificationErrors = []
 
-    def test_function_form_variant_displayed(self):
+    def _function_form_variant_displayed(self):
         # self.driver.orientation = 'portrait'
         driver = ObjectAmpStitchFix(self.driver)
         driver.mobile_function_form_variant_displayed('iPad Mini')
 
-    def test_function_all_forms_sign_up(self):
+    def _function_all_forms_sign_up(self):
         driver = ObjectAmpStitchFix(self.driver)
         driver.function_form_sign_up()
 
@@ -246,12 +246,12 @@ class UIAmpushStitchFixMobileSamsungGalaxyNote3(unittest.TestCase):
         # self.driver = webdriver.Firefox(profile)
         self.verificationErrors = []
 
-    def test_function_form_variant_displayed(self):
+    def _function_form_variant_displayed(self):
         # self.driver.orientation = 'portrait'
         driver = ObjectAmpStitchFix(self.driver)
         driver.mobile_function_form_variant_displayed('Note 3')
 
-    def test_function_all_forms_sign_up(self):
+    def _function_all_forms_sign_up(self):
         driver = ObjectAmpStitchFix(self.driver)
         driver.function_form_sign_up()
 

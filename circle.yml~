@@ -1,0 +1,13 @@
+
+general:
+  build_dir: /style.stitchfix.com/automation
+
+machine:
+  python:
+    version: 2.7.5
+
+dependencies:
+  post:
+    - pip install -U -r requirements.txt
+
+
