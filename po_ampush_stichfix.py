@@ -291,8 +291,6 @@ class ObjectAmpStitchFix():
         except:
             form_name = ''
             pass
-        import ipdb
-        ipdb.set_trace()
         return form_name
 
     def domain_detector(self, find_domain_name):
