@@ -25,7 +25,7 @@ class ObjectAmpStitchFix():
 
     def write_header_form_variant(self):
         header_lines = ['Test Name', 'Web/Mobile?', 'Resolution', 'Form A% ?', 'Form B% ?', 'Form C% ?',
-                        'Form D% ?', 'Form E% ?', 'Form F% ?', 'No of Iterations of URL', 'Pass/Fail?']
+                        'Form D% ?', 'Form E% ?', 'Form F% ?', 'Form G%', 'No of Iterations of URL', 'Pass/Fail?']
         with open("Amp_UI_Form_variant_RESULTS.csv", "w") as f:
             writer = csv.writer(f)
             writer.writerows([header_lines])
@@ -63,9 +63,9 @@ class ObjectAmpStitchFix():
                 change = each[2]
                 try:
                     form_percent = self.form_variant_calculator(each[1], change, False)
-                    form_a, form_b, form_c, form_d, form_e, form_f = form_percent
+                    form_a, form_b, form_c, form_d, form_e, form_f, form_g = form_percent
                     status = ['Form variant', 'Mobile', 'Browser Iphone4', form_a, form_b, form_c,
-                              form_d, form_e, form_f, each[2], 'Test Passed']
+                              form_d, form_e, form_f, form_g, each[2], 'Test Passed']
                     self.write_location_info(status)
                     try:
                         driver.get_screenshot_as_file('Device_NAME_%s.png'%device_name)
@@ -105,9 +105,9 @@ class ObjectAmpStitchFix():
                     res_x, res_y = x
                     try:
                         form_percent = self.form_variant_calculator(each[1], change, res_x, res_y, True)
-                        form_a, form_b, form_c, form_d, form_e, form_f = form_percent
+                        form_a, form_b, form_c, form_d, form_e, form_f, form_g = form_percent
                         status = ['Form variant', 'Web', (res_x, res_y), form_a, form_b, form_c,
-                                  form_d, form_e, form_f, each[2], 'Test Passed']
+                                  form_d, form_e, form_f, form_g, each[2], 'Test Passed']
                         self.write_location_info(status)
                         try:
                             driver.get_screenshot_as_file('web.png')
@@ -291,6 +291,8 @@ class ObjectAmpStitchFix():
         except:
             form_name = ''
             pass
+        import ipdb
+        ipdb.set_trace()
         return form_name
 
     def domain_detector(self, find_domain_name):
@@ -310,13 +312,15 @@ class ObjectAmpStitchFix():
         d_form = forms.count('d')
         e_form = forms.count('e')
         f_form = forms.count('f')
+        g_form = forms.count('g')
         aa_form = (a_form*1.0)*100/x
         bb_form = (b_form*1.0)*100/x
         cc_form = (c_form*1.0)*100/x
         dd_form = (d_form*1.0)*100/x
         ee_form = (e_form*1.0)*100/x
         ff_form = (f_form*1.0)*100/x
-        return [aa_form, bb_form, cc_form, dd_form, ee_form, ff_form]
+        gg_form = (g_form*1.0)*100/x
+        return [aa_form, bb_form, cc_form, dd_form, ee_form, ff_form, gg_form]
 
     def form_variant_calculator(self, url, change, _resolution_x_=None, _resolution_y_=None, flag=None):
         new_driver = self.driver
@@ -344,15 +348,11 @@ class ObjectAmpStitchFix():
                 new_driver.refresh()
                 time.sleep(2)
                 form_new_value = self.form_detector()
-                # import ipdb
-                # ipdb.set_trace()
                 if req_form == form_new_value:
                     break
 
     def all_forms_sign_up(self, url, res_x, res_y):
         new_driver = self.driver
-        # import ipdb
-        # ipdb.set_trace()
         #get form name to sign up
         new_driver.set_window_size(res_x, res_y)
         self.get_particular_form('a', url)
